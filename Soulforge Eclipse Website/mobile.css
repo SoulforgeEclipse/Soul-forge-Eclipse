@@ -1,0 +1,100 @@
+/* ============================
+   MOBILE LAYOUT — Soul‑Forge Codex
+   ============================ */
+
+@media (max-width: 900px) {
+
+    /* Hide desktop sidebar */
+    .sidebar {
+        display: none !important;
+    }
+
+    /* Show mobile menu button */
+    #menu-btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 2000;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 10px 14px;
+        border-radius: 6px;
+        backdrop-filter: blur(6px);
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    /* Mobile sidebar container */
+    #mobile-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        background: rgba(10, 10, 15, 0.92);
+        backdrop-filter: blur(10px);
+        padding: 40px 20px;
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+        z-index: 2500;
+        overflow-y: auto;
+    }
+
+    /* When opened */
+    #mobile-sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Mobile nav links */
+    #mobile-sidebar a {
+        display: block;
+        padding: 12px 0;
+        color: #dcdcdc;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Overlay behind sidebar */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 2400;
+    }
+
+    #overlay.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* Main content spacing */
+    .content {
+        margin-left: 0 !important;
+        padding: 20px;
+        padding-top: 80px; /* space for menu button */
+    }
+
+    /* Blog cards / gallery responsiveness */
+    .blog-card,
+    .gallery-item {
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
+    }
+
+    /* Images scale properly */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
